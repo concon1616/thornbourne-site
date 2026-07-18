@@ -7,319 +7,172 @@
 <meta name="description" content="Thornbourne is a small digital studio building web, SEO, and email that lasts. Steady hands, real results — a few clients a year, built by the partners.">
 <meta name="theme-color" content="#1E2B23">
 <meta property="og:title" content="Thornbourne — Steady hands. Real results.">
-<meta property="og:description" content="A small digital studio building web, SEO, and email that lasts.">
+<meta property="og:description" content="Thornbourne is a small digital studio building web, SEO, and email that lasts. Steady hands, real results — a few clients a year, built by the partners.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#EDE7D9;      /* page ground */
-    --cream-2:#E6DFCC;    /* deeper band / footer */
-    --forest:#1E2B23;     /* primary text */
-    --forest-soft:#4A5249;/* secondary text */
-    --brass:#B4893C;      /* accent (text-safe on cream) */
-    --brass-line:#C9A94E; /* hairlines / marks */
-    --rule:#D6CFBD;       /* thin dividers */
-    --maxw:1180px;
-    --serif:"Fraunces",Georgia,"Times New Roman",serif;
-    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --ground:#EDE7D9;--ground2:#E6DFCC;--text:#1E2B23;--soft:#4A5249;
+    --accent:#B4893C;--line:#C9A94E;--rule:#D6CFBD;--kicker:#B4893C;
+    --maxw:1180px;--display:"Fraunces",Georgia,serif;--body:"Inter",system-ui,sans-serif;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--cream);color:var(--forest);
-    font-family:var(--sans);font-size:17px;line-height:1.6;
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  }
+  body{margin:0;background:var(--ground);color:var(--text);font-family:var(--body);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.05;margin:0;letter-spacing:-.01em}
   a{color:inherit}
-  .kicker{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--brass);margin:0 0 22px}
-  .sub{color:var(--forest-soft);font-size:18px;max-width:52ch}
-  .btn{display:inline-block;font-family:var(--sans);font-weight:500;font-size:15px;
+  .kicker{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--kicker);margin:0 0 22px}
+  .sub{color:var(--soft);font-size:18px;max-width:52ch}
+  .btn{display:inline-block;font-family:var(--body);font-weight:500;font-size:15px;
     padding:12px 26px;border-radius:999px;text-decoration:none;transition:.18s ease}
-  .btn--solid{background:var(--forest);color:var(--cream)}
-  .btn--solid:hover{background:#16211b}
-  .btn--ghost{border:1.5px solid var(--brass-line);color:var(--brass)}
-  .btn--ghost:hover{background:var(--brass);color:#fff;border-color:var(--brass)}
-  .link{color:var(--brass);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+  .btn--solid{background:var(--accent);color:#fff}
+  .btn--solid:hover{filter:brightness(1.06)}
+  .btn--ghost{border:1.5px solid var(--accent);color:var(--accent)}
+  .btn--ghost:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .link{color:var(--accent);text-decoration:none;font-weight:500;display:inline-flex;align-items:center;gap:8px}
   .link:hover{gap:12px}
-  .link svg{transition:transform .18s ease}
-  .link:hover svg{transform:translateX(3px)}
+  .link svg{transition:transform .18s ease}.link:hover svg{transform:translateX(3px)}
   section{padding:104px 0}
   .divide{border-top:1px solid var(--rule)}
-  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:3px}
-
-  /* header */
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
   header{position:sticky;top:0;z-index:10;background:rgba(237,231,217,.86);
     backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid transparent}
   header.scrolled{border-bottom-color:var(--rule)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-  .brand{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:-.01em;text-decoration:none}
+  .brand{font-family:var(--display);font-size:26px;font-weight:500;letter-spacing:-.01em;text-decoration:none}
   .nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
-  .nav a.navlink{text-decoration:none;font-size:15px;color:var(--forest);opacity:.85}
+  .nav a.navlink{text-decoration:none;font-size:15px;color:var(--text);opacity:.82}
   .nav a.navlink:hover{opacity:1}
   .nav .right{display:flex;align-items:center;gap:30px}
-  .menu-btn{display:none}
-
-  /* hero */
   .hero{padding:132px 0 128px;text-align:center}
   .hero h1{font-size:clamp(48px,8vw,104px);letter-spacing:-.02em}
   .hero .sub{margin:26px auto 34px;font-size:20px;text-align:center}
-
-  /* positioning */
   .position{text-align:center}
-  .position h2{font-size:clamp(30px,4.4vw,52px);max-width:20ch;margin:0 auto}
+  .position h2{font-size:clamp(30px,4.4vw,52px);max-width:22ch;margin:0 auto}
   .position .sub{margin:20px auto 0;text-align:center}
-  .position .rule{height:1px;background:var(--brass-line);max-width:520px;margin:52px auto 0;opacity:.7}
-
-  /* services */
-  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:12px}
-  .svc{padding:0 40px;position:relative}
+  .position .rule{height:1px;background:var(--accent);max-width:520px;margin:52px auto 0;opacity:.65}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:12px}
+  .svc{padding:0 40px}
   .svc + .svc{border-left:1px solid var(--rule)}
-  .svc .glyph{width:44px;height:44px;color:var(--forest);margin-bottom:26px}
+  .svc .glyph{width:44px;height:44px;color:var(--text);margin-bottom:26px}
   .svc h3{font-size:27px;margin-bottom:14px}
-  .svc p{color:var(--forest-soft);margin:0;font-size:15.5px;max-width:34ch}
-
-  /* process */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px}
+  .svc p{color:var(--soft);margin:0;font-size:15.5px;max-width:34ch}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px}
   .step{padding:0 30px}
   .step + .step{border-left:1px solid var(--rule)}
-  .step .num{font-family:var(--serif);font-size:52px;color:var(--brass);line-height:1;font-weight:400}
+  .step .num{font-family:var(--display);font-size:52px;color:var(--accent);line-height:1;font-weight:400}
   .step h3{font-size:22px;margin:14px 0 10px}
-  .step p{color:var(--forest-soft);font-size:14.5px;margin:0}
-
-  /* work */
+  .step p{color:var(--soft);font-size:14.5px;margin:0}
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:44px}
-  .card .thumb{aspect-ratio:16/10;border-radius:14px;background:
-    radial-gradient(120% 120% at 20% 15%,#D9D2BE 0%,#CFC7AF 55%,#C4BBA0 100%);
-    border:1px solid var(--rule);display:flex;align-items:center;justify-content:center}
-  .card .thumb svg{width:48px;height:48px;color:var(--forest);opacity:.5}
+  .card .thumb{aspect-ratio:16/10;border-radius:14px;background:radial-gradient(120% 120% at 20% 15%,#E1DAC6 0%,#D6CEB6 55%,#CBC2A6 100%);
+    border:1px solid var(--rule);overflow:hidden}
+  .card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
   .card h3{font-size:22px;margin:20px 0 4px}
-  .card span{color:var(--forest-soft);font-size:14px}
-
-  /* partners */
+  .card span{color:var(--soft);font-size:14px}
   .ppl{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:44px;max-width:760px}
   .person{display:flex;align-items:center;gap:22px}
-  .avatar{width:96px;height:96px;border-radius:50%;flex:0 0 auto;background:
-    radial-gradient(80% 80% at 50% 35%,#D7D0BC,#C7BFA6);border:1px solid var(--rule);
-    display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-  .avatar svg{width:60px;height:60px;color:var(--forest);opacity:.32;transform:translateY(6px)}
+  .avatar{width:96px;height:96px;border-radius:50%;flex:0 0 auto;object-fit:cover;
+    object-position:center 22%;background:radial-gradient(80% 80% at 50% 35%,#DDD6C2,#CEC6AB);border:1px solid var(--rule);display:block}
   .person h3{font-size:22px;margin:0 0 2px}
-  .person span{color:var(--forest-soft);font-size:14.5px}
-  .partners .foot{margin-top:38px;color:var(--forest-soft)}
-
-  /* faq */
+  .person span{color:var(--soft);font-size:14.5px}
+  .partners .foot{margin-top:38px;color:var(--soft)}
   .faq h2{font-size:clamp(28px,4vw,46px);margin-bottom:14px}
   .acc{border-top:1px solid var(--rule);margin-top:34px}
   .acc details{border-bottom:1px solid var(--rule)}
-  .acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;
-    justify-content:space-between;gap:20px;padding:26px 4px;
-    font-family:var(--serif);font-size:23px;font-weight:500}
+  .acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;padding:26px 4px;font-family:var(--display);font-size:23px;font-weight:500}
   .acc summary::-webkit-details-marker{display:none}
-  .acc summary .pm{color:var(--brass);font-family:var(--sans);font-size:26px;line-height:1;
+  .acc summary .pm{color:var(--accent);font-family:var(--body);font-size:26px;line-height:1;
     transition:transform .2s ease;flex:0 0 auto}
   .acc details[open] summary .pm{transform:rotate(45deg)}
-  .acc .body{padding:0 4px 26px;color:var(--forest-soft);max-width:64ch;margin-top:-6px}
-
-  /* closing */
+  .acc .body{padding:0 4px 26px;color:var(--soft);max-width:64ch;margin-top:-6px}
   .closing{text-align:center;padding:120px 0 96px}
   .closing h2{font-size:clamp(38px,6vw,72px)}
   .closing .btn{margin:34px 0 20px}
-  .closing .email{color:var(--forest-soft);font-size:15px}
-  .closing .email a{color:var(--forest-soft);text-decoration:none;border-bottom:1px solid var(--rule)}
-
-  /* footer */
-  footer{background:var(--cream-2);border-top:1px solid var(--rule)}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:30px;
-    align-items:start;padding:56px 0}
+  .closing .email{color:var(--soft);font-size:15px}
+  .closing .email a{color:var(--soft);text-decoration:none;border-bottom:1px solid var(--rule)}
+  footer{background:var(--ground2);border-top:1px solid var(--rule)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:30px;align-items:start;padding:56px 0}
   footer .brand{font-size:24px}
-  .fcol h4{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--brass);margin:0 0 16px;font-weight:600}
-  .fcol a{display:block;text-decoration:none;color:var(--forest);opacity:.82;font-size:15px;margin-bottom:10px}
+  .fcol h4{font-family:var(--body);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--kicker);margin:0 0 16px;font-weight:600}
+  .fcol a{display:block;text-decoration:none;color:var(--text);opacity:.8;font-size:15px;margin-bottom:10px}
   .fcol a:hover{opacity:1}
-  .legal{border-top:1px solid var(--rule);padding:22px 0;color:var(--forest-soft);font-size:13px;
+  .legal{border-top:1px solid var(--rule);padding:22px 0;color:var(--soft);font-size:13px;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
   @media(max-width:860px){
     section{padding:76px 0}
-    .cols3,.steps,.work-grid,.ppl{grid-template-columns:1fr;gap:0}
+    .cols3,.steps,.work-grid,.ppl{grid-template-columns:1fr}
     .svc{padding:32px 0}.svc + .svc{border-left:0;border-top:1px solid var(--rule)}
     .step{padding:26px 0}.step + .step{border-left:0;border-top:1px solid var(--rule)}
-    .work-grid{gap:26px}.ppl{gap:26px}
     .nav ul,.nav .right .navlink{display:none}
     .foot-grid{grid-template-columns:1fr 1fr;gap:34px}
   }
 </style>
 </head>
 <body>
-
-<header id="hdr">
-  <div class="wrap nav">
-    <a class="brand" href="#top">Thornbourne</a>
-    <div class="right">
-      <ul>
-        <li><a class="navlink" href="#services">Work</a></li>
-        <li><a class="navlink" href="#services">Services</a></li>
-        <li><a class="navlink" href="#studio">About</a></li>
-        <li><a class="navlink" href="#contact">Contact</a></li>
-      </ul>
-      <a class="btn btn--ghost" href="#contact">Inquire</a>
-    </div>
-  </div>
-</header>
-
+<header id="hdr"><div class="wrap nav">
+  <a class="brand" href="#top">Thornbourne</a>
+  <div class="right"><ul><li><a class="navlink" href="#services">Work</a></li><li><a class="navlink" href="#services">Services</a></li><li><a class="navlink" href="#studio">About</a></li><li><a class="navlink" href="#contact">Contact</a></li></ul>
+  <a class="btn btn--ghost" href="#contact">Inquire</a></div>
+</div></header>
 <main id="top">
-
-  <!-- HERO -->
   <section class="hero wrap" aria-label="Introduction">
     <h1>Steady hands.<br>Real results.</h1>
     <p class="sub">Digital marketing for lasting impact.</p>
-    <a class="link" href="#services">See our work
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-    </a>
+    <a class="link" href="#services">See our work <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
   </section>
-
-  <!-- POSITIONING -->
-  <section class="position divide" aria-label="The studio">
-    <div class="wrap">
-      <p class="kicker">The studio</p>
-      <h2>A small studio building web, SEO, and email that lasts.</h2>
-      <p class="sub">A few clients a year, built by the partners — not a content factory.</p>
-      <div class="rule"></div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="divide" aria-label="What we do">
-    <div class="wrap">
-      <p class="kicker">What we do</p>
-      <div class="cols3">
-        <div class="svc">
-          <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6v20M24 26c-6 0-11 4-13 8M24 26c6 0 11 4 13 8M8 26h32"/></svg>
-          <h3>Web development</h3>
-          <p>Sites built to be structurally sound and quietly beautiful — made to last.</p>
-        </div>
-        <div class="svc">
-          <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="22" cy="22" r="12"/><path d="M31 31l9 9"/></svg>
-          <h3>SEO</h3>
-          <p>Durable rankings that compound, because the work underneath is real.</p>
-        </div>
-        <div class="svc">
-          <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="12" width="32" height="24" rx="2"/><path d="M8 15l16 12 16-12"/></svg>
-          <h3>Email</h3>
-          <p>Lifecycle programs cut precisely to your customer — every message earns its place.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="divide" aria-label="How we work">
-    <div class="wrap">
-      <p class="kicker">How we work</p>
-      <h2 style="font-size:clamp(28px,4vw,46px)">A steady, four-step method.</h2>
-      <div class="steps">
-        <div class="step"><div class="num">01</div><h3>Listen</h3><p>We learn the business before we touch anything.</p></div>
-        <div class="step"><div class="num">02</div><h3>Build</h3><p>Considered, senior work — no juniors, no guesswork.</p></div>
-        <div class="step"><div class="num">03</div><h3>Measure</h3><p>We instrument everything and report honestly.</p></div>
-        <div class="step"><div class="num">04</div><h3>Refine</h3><p>We keep improving what already works.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK (honest: illustrative disciplines, not fabricated clients) -->
-  <section class="divide" aria-label="The work">
-    <div class="wrap">
-      <p class="kicker">The work</p>
-      <h2 style="font-size:clamp(28px,4vw,46px)">What we build.</h2>
-      <div class="work-grid">
-        <div class="card">
-          <div class="thumb"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="10" width="34" height="28" rx="2"/><path d="M7 17h34M12 24h12M12 29h18"/></svg></div>
-          <h3>Websites</h3><span>Design &amp; build</span>
-        </div>
-        <div class="card">
-          <div class="thumb"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="12" width="32" height="24" rx="2"/><path d="M8 15l16 12 16-12"/></svg></div>
-          <h3>Email programs</h3><span>Lifecycle &amp; campaigns</span>
-        </div>
-        <div class="card">
-          <div class="thumb"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="21" cy="21" r="11"/><path d="M29 29l9 9"/></svg></div>
-          <h3>SEO foundations</h3><span>Technical &amp; content</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARTNERS -->
-  <section id="studio" class="partners divide" aria-label="Who you work with">
-    <div class="wrap">
-      <p class="kicker">Who you work with</p>
-      <h2 style="font-size:clamp(28px,4vw,46px)">You work with the partners. Every time.</h2>
-      <div class="ppl">
-        <div class="person">
-          <span class="avatar" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><circle cx="24" cy="18" r="9"/><path d="M8 44c1-9 8-14 16-14s15 5 16 14z"/></svg></span>
-          <div><h3>Tom Whitaker</h3><span>Founder</span></div>
-        </div>
-        <div class="person">
-          <span class="avatar" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor"><circle cx="24" cy="18" r="9"/><path d="M8 44c1-9 8-14 16-14s15 5 16 14z"/></svg></span>
-          <div><h3>Owen Bramley</h3><span>Partner</span></div>
-        </div>
-      </div>
-      <p class="foot">Senior hands on every account, from the first call to the last report.</p>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq divide" aria-label="Frequently asked questions">
-    <div class="wrap">
-      <p class="kicker">Good questions</p>
-      <h2>The things people ask.</h2>
-      <div class="acc">
-        <details><summary>Do you work with our platform?<span class="pm">+</span></summary><div class="body">Almost certainly. We work across the common website, email, and commerce platforms, and we'll tell you plainly if something isn't a good fit.</div></details>
-        <details><summary>How do you price?<span class="pm">+</span></summary><div class="body">Fixed-scope projects and monthly retainers, quoted up front. No surprise invoices, no hourly meters.</div></details>
-        <details><summary>How many clients do you take on?<span class="pm">+</span></summary><div class="body">Deliberately few. A handful at a time, so the partners stay on your account rather than handing it to a junior pod.</div></details>
-        <details><summary>What does a typical timeline look like?<span class="pm">+</span></summary><div class="body">Most engagements run four to twelve weeks to launch, then an ongoing refine cycle. We'll map a realistic timeline in the first call.</div></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING -->
-  <section id="contact" class="closing divide" aria-label="Contact">
-    <div class="wrap">
-      <h2>Build something that lasts.</h2>
-      <a class="btn btn--ghost" href="mailto:hello@thornbourne.com">Inquire</a>
-      <p class="email"><a href="mailto:hello@thornbourne.com">hello@thornbourne.com</a></p>
-    </div>
-  </section>
-
+  <section class="position divide" aria-label="Positioning"><div class="wrap">
+    <p class="kicker">The studio</p><h2>A small studio building web, SEO, and email that lasts.</h2>
+    <p class="sub">A few clients a year, built by the partners — not a content factory.</p><div class="rule"></div>
+  </div></section>
+  <section id="services" class="divide" aria-label="What we do"><div class="wrap">
+    <p class="kicker">What we do</p><div class="cols3"><div class="svc"><svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6v20M24 26c-6 0-11 4-13 8M24 26c6 0 11 4 13 8M8 26h32"/></svg><h3>Web development</h3><p>Sites built to be structurally sound and quietly beautiful — made to last.</p></div><div class="svc"><svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="22" cy="22" r="12"/><path d="M31 31l9 9"/></svg><h3>SEO</h3><p>Durable rankings that compound, because the work underneath is real.</p></div><div class="svc"><svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="12" width="32" height="24" rx="2"/><path d="M8 15l16 12 16-12"/></svg><h3>Email</h3><p>Lifecycle programs cut precisely to your customer — every message earns its place.</p></div></div>
+  </div></section>
+  <section class="divide" aria-label="How we work"><div class="wrap">
+    <p class="kicker">How we work</p>
+    <h2 style="font-size:clamp(28px,4vw,46px)">A steady, four-step method.</h2>
+    <div class="steps"><div class="step"><div class="num">01</div><h3>Listen</h3><p>We learn the business before we touch anything.</p></div><div class="step"><div class="num">02</div><h3>Build</h3><p>Considered, senior work — no juniors, no guesswork.</p></div><div class="step"><div class="num">03</div><h3>Measure</h3><p>We instrument everything and report honestly.</p></div><div class="step"><div class="num">04</div><h3>Refine</h3><p>We keep improving what already works.</p></div></div>
+  </div></section>
+  <section class="divide" aria-label="The work"><div class="wrap">
+    <p class="kicker">The work</p>
+    <h2 style="font-size:clamp(28px,4vw,46px)">What we build.</h2>
+    <div class="work-grid"><div class="card"><div class="thumb"><img src="assets/work-1.jpg" alt="Websites — Design &amp; build" loading="lazy"></div><h3>Websites</h3><span>Design &amp; build</span></div><div class="card"><div class="thumb"><img src="assets/work-2.jpg" alt="Email programs — Lifecycle &amp; campaigns" loading="lazy"></div><h3>Email programs</h3><span>Lifecycle &amp; campaigns</span></div><div class="card"><div class="thumb"><img src="assets/work-3.jpg" alt="SEO foundations — Technical &amp; content" loading="lazy"></div><h3>SEO foundations</h3><span>Technical &amp; content</span></div></div>
+  </div></section>
+  <section id="studio" class="partners divide" aria-label="Who you work with"><div class="wrap">
+    <p class="kicker">Who you work with</p>
+    <h2 style="font-size:clamp(28px,4vw,46px)">You work with the partners. Every time.</h2>
+    <div class="ppl"><div class="person"><img class="avatar" src="assets/team-1.jpg" alt="Tom Whitaker, Founder" loading="lazy"><div><h3>Tom Whitaker</h3><span>Founder</span></div></div><div class="person"><img class="avatar" src="assets/team-2.jpg" alt="Owen Bramley, Partner" loading="lazy"><div><h3>Owen Bramley</h3><span>Partner</span></div></div></div>
+    <p class="foot">Senior hands on every account, from the first call to the last report.</p>
+  </div></section>
+  <section class="faq divide" aria-label="FAQ"><div class="wrap">
+    <p class="kicker">Good questions</p><h2>The things people ask.</h2>
+    <div class="acc"><details><summary>Do you work with our platform?<span class="pm">+</span></summary><div class="body">Almost certainly. We work across the common website, email, and commerce platforms, and we'll tell you plainly if something isn't a good fit.</div></details><details><summary>How do you price?<span class="pm">+</span></summary><div class="body">Fixed-scope projects and monthly retainers, quoted up front. No surprise invoices, no hourly meters.</div></details><details><summary>How many clients do you take on?<span class="pm">+</span></summary><div class="body">Deliberately few. A handful at a time, so the partners stay on your account rather than handing it to a junior pod.</div></details><details><summary>What does a typical timeline look like?<span class="pm">+</span></summary><div class="body">Most engagements run four to twelve weeks to launch, then an ongoing refine cycle. We'll map a realistic timeline in the first call.</div></details></div>
+  </div></section>
+  <section id="contact" class="closing divide" aria-label="Contact"><div class="wrap">
+    <h2>Build something that lasts.</h2>
+    <a class="btn btn--ghost" href="mailto:hello@thornbourne.com">Inquire</a>
+    <p class="email"><a href="mailto:hello@thornbourne.com">hello@thornbourne.com</a></p>
+  </div></section>
 </main>
-
 <footer>
   <div class="wrap foot-grid">
     <a class="brand" href="#top">Thornbourne</a>
-    <div class="fcol">
-      <h4>Studio</h4>
-      <a href="#services">Work</a><a href="#services">Services</a><a href="#studio">About</a>
-    </div>
-    <div class="fcol">
-      <h4>More</h4>
-      <a href="#studio">Studio</a><a href="#contact">Contact</a><a href="#">Privacy</a>
-    </div>
+    <div class="fcol"><h4>Studio</h4><a href="#services">Work</a><a href="#services">Services</a><a href="#studio">About</a></div>
+    <div class="fcol"><h4>More</h4><a href="#studio">Studio</a><a href="#contact">Contact</a><a href="#">Privacy</a></div>
     <a class="btn btn--ghost" href="#contact">Inquire</a>
   </div>
-  <div class="wrap legal">
-    <span>Thornbourne — Digital marketing for lasting impact.</span>
-    <span>&copy; 2026 Thornbourne</span>
-  </div>
+  <div class="wrap legal"><span>Thornbourne — Digital marketing for lasting impact.</span><span>&copy; 2026 Thornbourne</span></div>
 </footer>
-
 <script>
-  // subtle header hairline on scroll
   var hdr=document.getElementById('hdr');
-  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>8)};
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  var f=function(){hdr.classList.toggle('scrolled',window.scrollY>8)};f();
+  window.addEventListener('scroll',f,{passive:true});
 </script>
 </body>
 </html>
