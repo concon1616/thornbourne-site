@@ -8,147 +8,154 @@
 <meta name="theme-color" content="#1E2B23">
 <meta property="og:title" content="Thornbourne - Steady hands. Real results.">
 <meta property="og:description" content="Thornbourne is a small digital studio building web, SEO, and email that lasts. Steady hands, real results — a few clients a year, built by the partners.">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ground:#EDE7D9; --ground2:#E6DFCC; --text:#1E2B23; --soft:#4A5249;
-    --accent:#B4893C; --line:#C9A94E; --rule:#D6CFBD; --kicker:#B4893C;
-    --display:"Fraunces",Georgia,serif; --body:"Inter",system-ui,sans-serif;
+    --darkbg:#1E2B23; --darkfg:#EDE7D9; --lightbg:#EDE7D9; --lightfg:#1E2B23;
+    --accent:#B4893C; --display:"Fraunces",Georgia,serif; --label:"Fraunces",Georgia,serif; --label-w:600;
+    --sans:"Inter",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--ground);color:var(--text);font-family:var(--body);
-    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  body{font-family:var(--sans);background:var(--darkbg);-webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility}
-  .wrap{max-width:1280px;margin:0 auto;padding:0 48px}
-  a{color:inherit;text-decoration:none}
-  .kicker{display:flex;align-items:center;gap:16px;font-size:13px;font-weight:600;
-    letter-spacing:.22em;text-transform:uppercase;color:var(--kicker)}
-  .kicker::before{content:"";width:40px;height:1px;background:currentColor;opacity:.7}
-  .arw{width:26px;height:26px;display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1376px;margin:0 auto;padding:0 72px;position:relative}
+  svg{display:block}
+  .kick{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.34em;text-transform:uppercase;
+    display:flex;align-items:center;gap:18px}
+  .kick::before{content:"";width:44px;height:1px;background:currentColor;opacity:.6}
+  .arrowbtn{border-radius:999px;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;transition:.25s}
 
-  /* header */
-  header{position:sticky;top:0;z-index:20;background:rgba(237,231,217,.86);
-    backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--rule)}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:76px}
-  .brand{font-family:var(--display);font-weight:500;font-size:22px;
-    letter-spacing:-.01em}
-  nav ul{display:flex;gap:34px;list-style:none}
-  .navlink{font-size:15px;color:var(--soft)}
-  .navlink:hover{color:var(--text)}
-  .cta{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;
-    padding:11px 20px;border:1px solid var(--text);border-radius:999px}
-  .cta:hover{background:var(--text);color:var(--ground)}
-  .cta .arw{width:16px;height:16px}
-  @media(max-width:860px){nav{display:none}}
+  /* dark / light section bases */
+  .dark{background:var(--darkbg);color:var(--darkfg)}
+  .light{background:var(--lightbg);color:var(--lightfg)}
 
-  /* hero */
-  .hero{padding:96px 0 104px}
-  .hero .kicker{margin-bottom:40px}
-  .hero h1{font-family:var(--display);font-weight:500;letter-spacing:-.01em;
-    font-size:clamp(52px,8.5vw,116px);line-height:.98;max-width:12ch}
-  .hero .sub{margin-top:34px;max-width:52ch;font-size:20px;color:var(--soft)}
-  .hero .go{margin-top:52px;display:inline-flex;align-items:center;justify-content:center;
-    width:68px;height:68px;border:1px solid var(--text);border-radius:999px;color:var(--text)}
-  .hero .go:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  /* HERO */
+  .hero{position:relative;min-height:768px;overflow:hidden}
+  .hero .col{max-width:600px;padding:92px 0 96px}
+  .hero .hr{width:548px;max-width:100%;height:1px;background:currentColor;opacity:.4}
+  .hero .kick{margin:22px 0 0}
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(56px,8.4vw,116px);line-height:.94;
+    letter-spacing:-.015em;margin:34px 0 0;font-optical-sizing:auto}
+  .hero p{max-width:520px;font-size:20px;line-height:1.55;margin:32px 0 34px;opacity:.82}
+  .hero .go{width:66px;height:66px;color:currentColor}
+  .hero .go:hover{background:var(--accent);border-color:var(--accent);color:var(--darkbg)}
+  .hero .art{position:absolute;top:0;right:0;width:46%;height:100%;
+    background:url(assets/work-1.jpg) center/cover no-repeat;filter:saturate(1.02)}
+  .hero .art::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,var(--darkbg),transparent 22%)}
+  @media(max-width:900px){.hero .art{display:none}}
 
-  /* positioning band */
-  .pos{border-top:1px solid var(--rule);padding:80px 0}
-  .pos .in{display:grid;grid-template-columns:1fr 1.35fr;gap:56px;align-items:start}
-  .pos h2{font-family:var(--display);font-weight:500;letter-spacing:-.01em;
-    font-size:clamp(30px,3.6vw,46px);line-height:1.08}
-  .pos p{font-size:19px;color:var(--soft);max-width:46ch}
-  @media(max-width:860px){.pos .in{grid-template-columns:1fr;gap:22px}}
+  /* SERVICES */
+  .svcs{padding:80px 0 96px}
+  .svcs .kick{color:var(--accent)}
+  .svcs h2{font-family:var(--display);font-weight:500;font-size:clamp(48px,7.2vw,104px);line-height:1;
+    letter-spacing:-.015em;margin:16px 0 30px;font-optical-sizing:auto}
+  .row{display:grid;grid-template-columns:64px 1fr 62px;align-items:center;gap:26px;
+    padding:30px 0;border-top:1px solid;border-color:color-mix(in srgb,var(--lightfg) 22%,transparent)}
+  .row.last{border-bottom:1px solid;border-color:color-mix(in srgb,var(--lightfg) 22%,transparent)}
+  .num{font-family:var(--sans);font-weight:600;font-size:20px;opacity:.55}
+  .lab{font-family:var(--label);font-weight:var(--label-w);font-size:clamp(30px,5.4vw,74px);line-height:1;
+    letter-spacing:-.01em;text-transform:uppercase}
+  .circ{width:60px;height:60px;justify-self:end;color:currentColor}
+  .row:hover .circ{background:var(--accent);border-color:var(--accent);color:var(--lightbg);transform:translateX(4px)}
+  @media(max-width:640px){.row{grid-template-columns:44px 1fr}.circ{display:none}}
 
-  /* services - the homestead centerpiece */
-  .svcs{padding:44px 0 96px}
-  .svcs .head{padding:44px 0 20px}
-  .svcs h2{font-family:var(--display);font-weight:500;letter-spacing:-.01em;
-    font-size:clamp(44px,7vw,92px);line-height:1;margin-top:14px}
-  .svc{display:grid;grid-template-columns:64px 1fr 40px;grid-auto-rows:auto;
-    align-items:center;gap:6px 22px;padding:34px 0;border-top:1px solid var(--rule);
-    position:relative}
-  .svc:last-child{border-bottom:1px solid var(--rule)}
-  .svc-n{grid-row:1;font-family:var(--display);font-weight:400;font-size:20px;color:var(--soft)}
-  .svc-t{grid-row:1;grid-column:2;font-family:var(--display);font-weight:500;
-    letter-spacing:-.01em;font-size:clamp(34px,5.6vw,72px);line-height:1}
-  .svc-c{grid-row:2;grid-column:2;font-size:17px;color:var(--soft);max-width:60ch;
-    max-height:0;opacity:0;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,margin .4s ease}
-  .svc:hover .svc-c{max-height:80px;opacity:1;margin-top:12px}
-  .svc-a{grid-row:1;grid-column:3;width:60px;height:60px;border:1px solid var(--rule);
-    border-radius:999px;display:flex;align-items:center;justify-content:center;
-    color:var(--text);transition:.25s;justify-self:end}
-  .svc:hover .svc-a{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateX(4px)}
-  @media(max-width:640px){.svc-a{display:none}.svc{grid-template-columns:48px 1fr}}
+  /* PLATFORM STRIP */
+  .strip{padding:44px 0}
+  .strip .lbl{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.24em;text-transform:uppercase;
+    opacity:.5;margin-bottom:26px;text-align:center}
+  .strip .row2{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+  .strip .plat{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.6vw,34px);opacity:.9;letter-spacing:-.01em}
 
-  /* footer */
-  footer{background:var(--ground2);border-top:1px solid var(--rule);padding:104px 0 40px}
-  .fgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px}
-  footer h2{font-family:var(--display);font-weight:500;letter-spacing:-.01em;
-    font-size:clamp(46px,7vw,88px);line-height:1;max-width:11ch}
-  .pill{margin-top:36px;display:inline-flex;align-items:center;gap:14px;font-size:15px;
-    font-weight:600;padding:14px 14px 14px 26px;border-radius:999px;
-    background:var(--text);color:var(--ground)}
-  .pill .ic{width:36px;height:36px;border-radius:999px;background:var(--ground);
-    color:var(--text);display:flex;align-items:center;justify-content:center}
-  .pill .ic .arw{width:18px;height:18px}
-  .fright{display:flex;flex-direction:column;gap:8px}
-  .fmark{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.01em}
-  .ftag{color:var(--soft);max-width:34ch;margin-bottom:26px}
-  .fcols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-  .fcols a{display:block;color:var(--soft);padding:6px 0}
-  .fcols a:hover{color:var(--text)}
-  .fbot{margin-top:80px;padding-top:26px;border-top:1px solid var(--rule);
-    display:flex;justify-content:space-between;align-items:center;
-    color:var(--soft);font-size:14px;gap:20px;flex-wrap:wrap}
-  @media(max-width:860px){.fgrid{grid-template-columns:1fr;gap:40px}}
+  /* PROMISE (testimonial-style, honest) */
+  .promise{padding:24px 0 100px}
+  .promise .kick{color:var(--accent)}
+  .promise h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.06;
+    letter-spacing:-.015em;margin:16px 0 40px;max-width:16ch;font-optical-sizing:auto}
+  .card{background:var(--darkbg);color:var(--darkfg);border-radius:26px;padding:56px 60px 44px}
+  .card blockquote{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.5vw,32px);line-height:1.5;
+    letter-spacing:-.005em;max-width:34ch;font-optical-sizing:auto}
+  .card .by{display:flex;align-items:center;gap:16px;margin-top:38px}
+  .card .av{width:56px;height:56px;border-radius:999px;background:#3a3a3a center/cover no-repeat;flex:0 0 auto}
+  .card .who b{font-weight:600;font-size:16px}
+  .card .who span{display:block;font-size:14px;opacity:.62;margin-top:2px}
+
+  /* FOOTER */
+  footer{padding:100px 0 40px}
+  .fgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px}
+  footer h2{font-family:var(--display);font-weight:500;font-size:clamp(48px,6.6vw,88px);line-height:1;
+    letter-spacing:-.015em;max-width:11ch;font-optical-sizing:auto}
+  .pill{margin-top:34px;display:inline-flex;align-items:center;gap:14px;font-weight:600;font-size:14px;
+    letter-spacing:.04em;padding:0 14px 0 26px;height:52px;border-radius:999px;background:var(--darkfg);color:var(--darkbg)}
+  .pill .ic{width:36px;height:36px;border-radius:999px;background:var(--darkbg);color:var(--darkfg);
+    display:flex;align-items:center;justify-content:center}
+  .fright{display:flex;flex-direction:column;gap:6px}
+  .fmark{font-family:var(--display);font-weight:500;font-size:30px;letter-spacing:-.01em}
+  .ftag{opacity:.7;max-width:32ch;margin-bottom:26px}
+  .fcols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .fcols a{display:block;opacity:.72;padding:6px 0}
+  .fcols a:hover{opacity:1}
+  .fbot{margin-top:80px;padding-top:26px;border-top:1px solid;border-color:color-mix(in srgb,var(--darkfg) 20%,transparent);
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;opacity:.62}
+  @media(max-width:900px){.fgrid{grid-template-columns:1fr;gap:40px}}
+  .arrowbtn svg{width:60%;height:60%}
 </style>
 </head>
 <body>
-<header><div class="wrap bar">
-  <a class="brand" href="#top">Thornbourne</a>
-  <nav><ul><li><a class="navlink" href="#services">Work</a></li><li><a class="navlink" href="#services">Services</a></li><li><a class="navlink" href="#studio">About</a></li><li><a class="navlink" href="#contact">Contact</a></li></ul></nav>
-  <a class="cta" href="#contact">Inquire<svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-</div></header>
 
-<main id="top">
-  <section class="hero"><div class="wrap">
-    <div class="kicker">Thornbourne</div>
+<section class="hero dark" id="top"><div class="wrap">
+  <div class="col">
+    <div class="hr"></div>
+    <div class="kick">Thornbourne</div>
     <h1>Steady hands.<br>Real results.</h1>
-    <p class="sub">Digital marketing for lasting impact.</p>
-    <a class="go" href="#services" aria-label="See our work"><svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div></section>
+    <p>Thornbourne is a small digital studio building web, SEO, and email that lasts. Steady hands, real results — a few clients a year, built by the partners.</p>
+    <div class="hr"></div>
+    <a class="go arrowbtn" href="#contact" style="margin-top:40px"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="art"></div>
+</div></section>
 
-  <section class="pos"><div class="wrap in">
-    <div class="kicker">The studio</div>
-    <div><h2>A small studio building web, SEO, and email that lasts.</h2><p style="margin-top:20px">A few clients a year, built by the partners — not a content factory.</p></div>
-  </div></section>
+<section class="svcs light" id="services"><div class="wrap">
+  <div class="kick">What we do</div>
+  <h2>Our Services</h2>
+  <a class="row" href="#contact"><span class="num">01</span><span class="lab">WEB DEVELOPMENT</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="row" href="#contact"><span class="num">02</span><span class="lab">SEO</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="row last" href="#contact"><span class="num">03</span><span class="lab">EMAIL</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+</div></section>
 
-  <section class="svcs" id="services"><div class="wrap">
-    <div class="head"><div class="kicker">Customized solutions</div><h2>Our Services</h2></div>
-    <a class="svc" href="#contact"><span class="svc-n">01</span><span class="svc-t">Web development</span><span class="svc-c">Sites built to be structurally sound and quietly beautiful — made to last.</span><span class="svc-a"><svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="svc" href="#contact"><span class="svc-n">02</span><span class="svc-t">SEO</span><span class="svc-c">Durable rankings that compound, because the work underneath is real.</span><span class="svc-a"><svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="svc" href="#contact"><span class="svc-n">03</span><span class="svc-t">Email</span><span class="svc-c">Lifecycle programs cut precisely to your customer — every message earns its place.</span><span class="svc-a"><svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-  </div></section>
-</main>
+<section class="strip dark"><div class="wrap">
+  <div class="lbl">Works across the platforms you already use</div>
+  <div class="row2"><span class="plat">Shopify</span><span class="plat">Klaviyo</span><span class="plat">Google</span><span class="plat">Meta</span><span class="plat">Webflow</span></div>
+</div></section>
 
-<footer id="contact"><div class="wrap">
+<section class="promise light"><div class="wrap">
+  <div class="kick">Our promise</div>
+  <h2>A small studio building web, SEO, and email that lasts.</h2>
+  <div class="card">
+    <blockquote>Senior hands on every account, from the first call to the last report.</blockquote>
+    <div class="by">
+      <div class="av" style="background-image:url(assets/team-1.jpg)"></div>
+      <div class="who"><b>Tom Whitaker</b><span>Founder, Thornbourne</span></div>
+    </div>
+  </div>
+</div></section>
+
+<footer class="dark" id="contact"><div class="wrap">
   <div class="fgrid">
     <div>
       <h2>Build something that lasts.</h2>
-      <a class="pill" href="mailto:hello@thornbourne.com">Inquire<span class="ic"><svg class="arw" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="pill" href="mailto:hello@thornbourne.com">Inquire <span class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
     <div class="fright">
       <div class="fmark">Thornbourne</div>
       <p class="ftag">Steady hands. Real results.</p>
-      <div class="fcols">
-        <div><a href="#services">Work</a><a href="#services">Services</a><a href="#studio">About</a></div>
-        <div><a href="#studio">Studio</a><a href="#contact">Contact</a><a href="#">Privacy</a></div>
-      </div>
+      <div class="fcols"><div><a href="#services">Work</a><a href="#services">Services</a><a href="#studio">About</a></div><div><a href="#studio">Studio</a><a href="#contact">Contact</a><a href="#">Privacy</a></div></div>
     </div>
   </div>
   <div class="fbot"><span>&copy; 2026 Thornbourne — Digital marketing for lasting impact.</span><span>hello@thornbourne.com</span></div>
 </div></footer>
+
 </body>
 </html>
