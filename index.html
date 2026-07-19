@@ -15,7 +15,7 @@
   :root{
     --darkbg:#1E2B23; --darkfg:#EDE7D9; --lightbg:#EDE7D9; --lightfg:#1E2B23;
     --accent:#B4893C; --display:"Fraunces",Georgia,serif; --label:"Fraunces",Georgia,serif; --label-w:600;
-    --sans:"Inter",system-ui,sans-serif;
+    --hero-max:116px; --sans:"Inter",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -35,10 +35,10 @@
 
   /* HERO */
   .hero{position:relative;min-height:768px;overflow:hidden}
-  .hero .col{max-width:600px;padding:92px 0 96px}
+  .hero .col{max-width:640px;padding:92px 0 96px}
   .hero .hr{width:548px;max-width:100%;height:1px;background:currentColor;opacity:.4}
   .hero .kick{margin:22px 0 0}
-  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(56px,8.4vw,116px);line-height:.94;
+  .hero h1{font-family:var(--display);font-weight:500;font-size:clamp(52px,8vw,var(--hero-max));line-height:.94;
     letter-spacing:-.015em;margin:34px 0 0;font-optical-sizing:auto}
   .hero p{max-width:520px;font-size:20px;line-height:1.55;margin:32px 0 34px;opacity:.82}
   .hero .go{width:66px;height:66px;color:currentColor}
@@ -51,9 +51,8 @@
 
   /* SERVICES */
   .svcs{padding:80px 0 96px}
-  .svcs .kick{color:var(--accent)}
   .svcs h2{font-family:var(--display);font-weight:500;font-size:clamp(48px,7.2vw,104px);line-height:1;
-    letter-spacing:-.015em;margin:16px 0 30px;font-optical-sizing:auto}
+    letter-spacing:-.015em;margin:0 0 30px;font-optical-sizing:auto}
   .row{display:grid;grid-template-columns:64px 1fr 62px;align-items:center;gap:26px;
     padding:30px 0;border-top:1px solid;border-color:color-mix(in srgb,var(--lightfg) 22%,transparent)}
   .row.last{border-bottom:1px solid;border-color:color-mix(in srgb,var(--lightfg) 22%,transparent)}
@@ -73,9 +72,8 @@
 
   /* PROMISE (testimonial-style, honest) */
   .promise{padding:24px 0 100px}
-  .promise .kick{color:var(--accent)}
   .promise h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.06;
-    letter-spacing:-.015em;margin:16px 0 40px;max-width:16ch;font-optical-sizing:auto}
+    letter-spacing:-.015em;margin:0 0 40px;max-width:16ch;font-optical-sizing:auto}
   .card{background:var(--darkbg);color:var(--darkfg);border-radius:26px;padding:56px 60px 44px}
   .card blockquote{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.5vw,32px);line-height:1.5;
     letter-spacing:-.005em;max-width:34ch;font-optical-sizing:auto}
@@ -110,7 +108,6 @@
 <section class="hero dark" id="top"><div class="wrap">
   <div class="col">
     <div class="hr"></div>
-    <div class="kick">Thornbourne</div>
     <h1>Steady hands.<br>Real results.</h1>
     <p>Thornbourne is a small digital studio building web, SEO, and email that lasts. Steady hands, real results — a few clients a year, built by the partners.</p>
     <div class="hr"></div>
@@ -120,7 +117,6 @@
 </div></section>
 
 <section class="svcs light" id="services"><div class="wrap">
-  <div class="kick">What we do</div>
   <h2>Our Services</h2>
   <a class="row" href="#contact"><span class="num">01</span><span class="lab">WEB DEVELOPMENT</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="row" href="#contact"><span class="num">02</span><span class="lab">SEO</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a><a class="row last" href="#contact"><span class="num">03</span><span class="lab">EMAIL</span><span class="circ"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
 </div></section>
@@ -131,7 +127,6 @@
 </div></section>
 
 <section class="promise light"><div class="wrap">
-  <div class="kick">Our promise</div>
   <h2>A small studio building web, SEO, and email that lasts.</h2>
   <div class="card">
     <blockquote>Senior hands on every account, from the first call to the last report.</blockquote>
